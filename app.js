@@ -22,13 +22,17 @@ function cardCreator() {
   for (let i = 0; i < data.length; i++) {
     const div = document.createElement("div");
     const img = document.createElement("img");
-    div.classList = "card";
-    img.src = `${data[i].img}`;
+    const p = document.createElement("p");
+    const txt = document.createTextNode(data[i].description);
+
+    p.append(txt);
+    p.id = `card${i}`;
+    img.src = `${data[i].image}`;
     div.appendChild(img);
     cont.appendChild(div);
   }
 }
 
-cardCreator();
+cont.innerHTML += `<div> <p>hei</p></div>`;
 
-document.createElement("div");
+cardCreator();
